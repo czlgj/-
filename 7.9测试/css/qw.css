@@ -1,0 +1,117 @@
+.tap {
+    width: 100%;
+}
+
+ul {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    margin: 10px;
+    list-style-type: none;
+}
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.fllan {
+    border-top: 2px solid rgb(187, 185, 185);
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.a {
+    margin: 0px;
+}
+
+.haibao {
+    margin: 10px 0px 0px 0px;
+}
+
+/* 作者栏 */
+.zzb{
+    border-bottom: 1px solid rgb(201, 201, 201);
+    margin-bottom: 5px;
+}
+.zz {
+    background-color: #fff;
+    padding: 5px;
+}
+
+.qwer img {
+    height: 50px;
+    width: 50px;
+}
+
+.name div {
+    margin-left: 5px;
+    font-size: 20px;
+
+}
+
+.lm {
+    font-size: 30px;
+    color: rgb(184, 184, 184);
+}
+
+.qwer {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #000;
+}
+
+
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #e0e0e0;
+}
+
+/* 内容 */
+.xnr {
+    margin: 10px;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    padding: 5px;
+    display: flex;
+}
+
+.mn {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nr {
+    background-color: #fff;
+    margin: 10px;
+    width: 800px;
+    padding: 10px;
+}
+
+.db {
+    background-color: #000000;
+}
+
+.ttp {
+    padding-top: 43px;
+}
+
+.tb {
+    display: flex;
+    flex-direction: row;
+}
+.ww{
+    margin: 10px;
+}
+.we{
+    margin: 10px;
+}
+h4{
+    margin: 0px 0px 10px 0px;
+}

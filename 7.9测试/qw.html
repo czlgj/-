@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/qw.css">
+    <script type="text/javascript" src="./js/qw.js"></script>
+    <script type="text/javascript" src="./js/qt.js"></script>
+</head>
+
+<body>
+    <div class="ha">
+        <div class="tap">
+            <ul class="a">
+                <img
+                    src="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg ">
+            </ul>
+        </div>
+        <div class="fl">
+            <ul class="fllan">
+            </ul>
+        </div>
+    </div>
+    <div class="body">
+        <div class="nr">
+
+        </div>
+        <div class="yc">
+            <div class="haibao"></div>
+            <div class="rwm"></div>
+            <div class="zz">
+                <div class="zzb">作者榜</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //导航栏
+        $.ajax({
+            url: 'https://api-juejin.suemor.com/api/v1/tab',
+            dataType: 'json',
+            success: (res) => {
+                console.log(res);
+                for (const key of res.data) {
+                    $('.a').append(`<li class="menu"><a href="${key.slug}">${key.title}</a></li>`);
+                }
+            }
+        })
+        //分类
+        $.ajax({
+            url: 'https://api-juejin.suemor.com/api/v1/aggregate/home/3',
+            dataType: 'json',
+            success: (res) => {
+                console.log(res);
+                for (const key of res.category) {
+                    $('.fllan').append(`<li class="menu"><a href="${key.slug}">${key.name}</a></li>`);
+                }
+            }
+        })
+        //作者栏
+        $.ajax({
+            url: 'https://api-juejin.suemor.com/api/v1/aggregate/home/3',
+            dataType: 'json',
+            success: (res) => {
+                console.log(res);
+                for (const key of res.authorRank) {
+                    $('.zz').append(` <div class="qwer"><img src="${key.avatar}"><div class="name"><div>${key.username}</div><div class="lm">${key.introduce}</div></div>
+                        </div>`);
+                }
+            }
+        })
+        //海报
+        $.ajax({
+            url: 'https://api-juejin.suemor.com/api/v1/aggregate/home/3',
+            dataType: 'json',
+            success: (res) => {
+                console.log(res);
+                const key = res.ad;
+                $('.haibao').append(`<a href="${key.adHref}"><img src="${key.phoUrl}"></a>`);
+            }
+        })
+        //内容
+        $.ajax({
+            url: 'https://api-juejin.suemor.com/api/v1/post?pageCurrent=1&pageSize=15',
+            dataType: 'json',
+            success: (res) => {
+                console.log(res);
+                for (const key of res.postList) {
+                    $('.nr').append(`
+                    <div class="mn">
+                        <div class="tb">
+                            <div class="ww">${key.user.username}</div>
+                            <div></div>
+                            <div class=we>${key.tags}</div>
+                        </div>
+                        <div class="xnr">
+                        <div>
+                            <h4>${key.title}</h4>
+                            <a href="${key.cover}">${key.content}</a>
+                        </div>
+                        <div class="ttp"> 
+                            <img src="${key.cover}" height="100px">
+                        </div>
+                           
+                    </div>`);
+                }
+            }
+
+        }
+        )
+    </script>
+</body>
+
+</html>
